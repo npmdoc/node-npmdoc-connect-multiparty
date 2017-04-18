@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/andrewrk/connect-multiparty"
-
-    >connect-multiparty (v2.0.0)</a>
+    <a href="https://github.com/andrewrk/connect-multiparty">connect-multiparty (v2.0.0)</a>
 </h1>
 <h4>multipart parsing middleware for connect using multiparty</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.connect-multiparty">module connect-multiparty</a><ol>
 
@@ -116,10 +109,10 @@
     req.files = req.files || {};
 
     // ignore GET
-    if (&#x27;GET&#x27; === req.method || &#x27;HEAD&#x27; === req.method) return next();
+    if ('GET' === req.method || 'HEAD' === req.method) return next();
 
     // check Content-Type
-    if (!typeis(req, &#x27;multipart/form-data&#x27;)) return next();
+    if (!typeis(req, 'multipart/form-data')) return next();
 
     // flag as parsed
     req._body = true;
@@ -140,17 +133,17 @@
       }
     }
 
-    form.on(&#x27;field&#x27;, function(name, val){
+    form.on('field', function(name, val){
       ondata(name, val, data);
     });
 
-    form.on(&#x27;file&#x27;, function(name, val){
+    form.on('file', function(name, val){
       val.name = val.originalFilename;
-      val.type = val.headers[&#x27;content-type&#x27;] || null;
+      val.type = val.headers['content-type'] || null;
       ondata(name, val, files);
     });
 
-    form.on(&#x27;error&#x27;, function(err){
+    form.on('error', function(err){
       if (done) return;
 
       done = true;
@@ -164,7 +157,7 @@
       });
     });
 
-    form.on(&#x27;close&#x27;, function() {
+    form.on('close', function() {
       if (done) return;
 
       done = true;
@@ -227,3 +220,4 @@
     ]
 </div>
 </div>
+</body></html>

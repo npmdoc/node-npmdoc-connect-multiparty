@@ -61,12 +61,163 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.connect-multiparty">module connect-multiparty</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.connect-multiparty.connect-multiparty">
+            function <span class="apidocSignatureSpan"></span>connect-multiparty
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.connect-multiparty.toString">
+            function <span class="apidocSignatureSpan">connect-multiparty.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.connect-multiparty.toString">module connect-multiparty.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.connect-multiparty.toString.toString">
+            function <span class="apidocSignatureSpan">connect-multiparty.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.connect-multiparty" id="apidoc.module.connect-multiparty">module connect-multiparty</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.connect-multiparty.connect-multiparty" id="apidoc.element.connect-multiparty.connect-multiparty">
+        function <span class="apidocSignatureSpan"></span>connect-multiparty
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect-multiparty = function (options){
+  options = options || {};
+
+  return function multipart(req, res, next) {
+    if (req._body) return next();
+    req.body = req.body || {};
+    req.files = req.files || {};
+
+    // ignore GET
+    if (&#x27;GET&#x27; === req.method || &#x27;HEAD&#x27; === req.method) return next();
+
+    // check Content-Type
+    if (!typeis(req, &#x27;multipart/form-data&#x27;)) return next();
+
+    // flag as parsed
+    req._body = true;
+
+    // parse
+    var form = new multiparty.Form(options);
+    var data = {};
+    var files = {};
+    var done = false;
+
+    function ondata(name, val, data){
+      if (Array.isArray(data[name])) {
+        data[name].push(val);
+      } else if (data[name]) {
+        data[name] = [data[name], val];
+      } else {
+        data[name] = val;
+      }
+    }
+
+    form.on(&#x27;field&#x27;, function(name, val){
+      ondata(name, val, data);
+    });
+
+    form.on(&#x27;file&#x27;, function(name, val){
+      val.name = val.originalFilename;
+      val.type = val.headers[&#x27;content-type&#x27;] || null;
+      ondata(name, val, files);
+    });
+
+    form.on(&#x27;error&#x27;, function(err){
+      if (done) return;
+
+      done = true;
+      err.status = 400;
+
+      if (!req.readable) return next(err);
+
+      req.resume();
+      onFinished(req, function(){
+        next(err);
+      });
+    });
+
+    form.on(&#x27;close&#x27;, function() {
+      if (done) return;
+
+      done = true;
+
+      try {
+        req.body = qs.parse(data);
+        req.files = qs.parse(files);
+        next();
+      } catch (err) {
+        err.status = 400;
+        next(err);
+      }
+    });
+
+    form.parse(req);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.connect-multiparty.toString" id="apidoc.element.connect-multiparty.toString">
+        function <span class="apidocSignatureSpan">connect-multiparty.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.connect-multiparty.toString" id="apidoc.module.connect-multiparty.toString">module connect-multiparty.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.connect-multiparty.toString.toString" id="apidoc.element.connect-multiparty.toString.toString">
+        function <span class="apidocSignatureSpan">connect-multiparty.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
