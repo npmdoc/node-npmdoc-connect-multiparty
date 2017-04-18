@@ -1,7 +1,7 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
     "buildNpmdoc": "connect-multiparty",
-    "description": "api documentation for [connect-multiparty (v2.0.0)](https://github.com/andrewrk/connect-multiparty) [![npm package](https://img.shields.io/npm/v/npmdoc-connect-multiparty.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-connect-multiparty) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-connect-multiparty.svg)](https://travis-ci.org/npmdoc/node-npmdoc-connect-multiparty)",
+    "description": "#### api documentation for  [connect-multiparty (v2.0.0)](https://github.com/andrewrk/connect-multiparty)  [![npm package](https://img.shields.io/npm/v/npmdoc-connect-multiparty.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-connect-multiparty) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-connect-multiparty.svg)](https://travis-ci.org/npmdoc/node-npmdoc-connect-multiparty)",
     "devDependencies": {
         "connect-multiparty": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
@@ -36,5 +36,5 @@
         "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
         "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
-    "version": "0.0.1"
+    "version": "0.0.2"
 }

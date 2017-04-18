@@ -1,9 +1,14 @@
-# api documentation for  [connect-multiparty (v2.0.0)](https://github.com/andrewrk/connect-multiparty)  [![npm package](https://img.shields.io/npm/v/npmdoc-connect-multiparty.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-connect-multiparty) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-connect-multiparty.svg)](https://travis-ci.org/npmdoc/node-npmdoc-connect-multiparty)
+# npmdoc-connect-multiparty
+
+#### api documentation for  [connect-multiparty (v2.0.0)](https://github.com/andrewrk/connect-multiparty)  [![npm package](https://img.shields.io/npm/v/npmdoc-connect-multiparty.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-connect-multiparty) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-connect-multiparty.svg)](https://travis-ci.org/npmdoc/node-npmdoc-connect-multiparty)
+
 #### multipart parsing middleware for connect using multiparty
 
-[![NPM](https://nodei.co/npm/connect-multiparty.png?downloads=true)](https://www.npmjs.com/package/connect-multiparty)
+[![NPM](https://nodei.co/npm/connect-multiparty.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/connect-multiparty)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-connect-multiparty/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-connect-multiparty_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-connect-multiparty/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-connect-multiparty/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-connect-multiparty/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-connect-multiparty/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-connect-multiparty/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-connect-multiparty/build/screenCapture.npmPackageListing.svg)
 
@@ -17,8 +22,7 @@
 
 {
     "author": {
-        "name": "Andrew Kelley",
-        "email": "superjoe30@gmail.com"
+        "name": "Andrew Kelley"
     },
     "bugs": {
         "url": "https://github.com/andrewrk/connect-multiparty/issues"
@@ -50,17 +54,14 @@
     "main": "index.js",
     "maintainers": [
         {
-            "name": "superjoe",
-            "email": "superjoe30@gmail.com"
+            "name": "superjoe"
         },
         {
-            "name": "dougwilson",
-            "email": "doug@somethingdoug.com"
+            "name": "dougwilson"
         }
     ],
     "name": "connect-multiparty",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/andrewrk/connect-multiparty.git"
@@ -71,16 +72,6 @@
     "version": "2.0.0"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module connect-multiparty](#apidoc.module.connect-multiparty)
-
-
-
-# <a name="apidoc.module.connect-multiparty"></a>[module connect-multiparty](#apidoc.module.connect-multiparty)
 
 
 
