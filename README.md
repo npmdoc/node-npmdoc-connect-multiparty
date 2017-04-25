@@ -1,6 +1,6 @@
 # npmdoc-connect-multiparty
 
-#### api documentation for  [connect-multiparty (v2.0.0)](https://github.com/andrewrk/connect-multiparty)  [![npm package](https://img.shields.io/npm/v/npmdoc-connect-multiparty.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-connect-multiparty) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-connect-multiparty.svg)](https://travis-ci.org/npmdoc/node-npmdoc-connect-multiparty)
+#### basic api documentation for  [connect-multiparty (v2.0.0)](https://github.com/andrewrk/connect-multiparty)  [![npm package](https://img.shields.io/npm/v/npmdoc-connect-multiparty.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-connect-multiparty) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-connect-multiparty.svg)](https://travis-ci.org/npmdoc/node-npmdoc-connect-multiparty)
 
 #### multipart parsing middleware for connect using multiparty
 
@@ -69,7 +69,8 @@
     "scripts": {
         "test": "mocha --reporter spec test/*.js"
     },
-    "version": "2.0.0"
+    "version": "2.0.0",
+    "bin": {}
 }
 ```
 
